@@ -23,6 +23,8 @@ namespace _0_Overview
                 app.UseDeveloperExceptionPage();
             }
 
+            //app.UseIdentityServer();
+
             app.Run(async (context) =>
             {
                 await context.Response.WriteAsync("Hello World!");
