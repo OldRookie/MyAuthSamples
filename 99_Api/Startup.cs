@@ -26,8 +26,7 @@ namespace _99_Api
                     {
                         options.Authority = "http://localhost:5000";
                         options.RequireHttpsMetadata = false;
-
-                        options.ApiName = "Xapi1";
+                        options.ApiName = "api1";
                     });
         }
 
