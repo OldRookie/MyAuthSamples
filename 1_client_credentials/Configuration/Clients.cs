@@ -24,6 +24,22 @@ namespace _1_client_credentials.Configuration
 
                     // scopes that client has access to
                     AllowedScopes = { "api1" }
+                },
+                new Client
+                {
+                    ClientId = "clientPwd",
+
+                    // no interactive user, use the clientid/secret for authentication
+                    AllowedGrantTypes = GrantTypes.ResourceOwnerPassword,
+
+                    // secret for authentication
+                    ClientSecrets =
+                    {
+                        new Secret("pwdsecret".Sha256())
+                    },
+
+                    // scopes that client has access to
+                    AllowedScopes = { "api1" }
                 }
             };
         }
