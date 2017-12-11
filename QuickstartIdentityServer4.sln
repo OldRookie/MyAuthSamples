@@ -16,7 +16,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "99_Api", "99_Api\99_Api.csp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "2_core_client", "2_core_client\2_core_client.csproj", "{62845BD9-0755-4A3A-9580-E0EB07BCE29D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3_js_client", "3_js_client\3_js_client.csproj", "{FAA88ADB-F1E1-4730-BAA8-8C7310722F8B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "3_js_client", "3_js_client\3_js_client.csproj", "{FAA88ADB-F1E1-4730-BAA8-8C7310722F8B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "5_UI_server", "5_UI_server\5_UI_server.csproj", "{E0EB7066-C116-411D-A7F5-867E00D03707}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -44,6 +46,10 @@ Global
 		{FAA88ADB-F1E1-4730-BAA8-8C7310722F8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FAA88ADB-F1E1-4730-BAA8-8C7310722F8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FAA88ADB-F1E1-4730-BAA8-8C7310722F8B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E0EB7066-C116-411D-A7F5-867E00D03707}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E0EB7066-C116-411D-A7F5-867E00D03707}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E0EB7066-C116-411D-A7F5-867E00D03707}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E0EB7066-C116-411D-A7F5-867E00D03707}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
