@@ -39,7 +39,7 @@ app.get('/repos', (req, res) => {
         }
         })
         .then(function(response) {        
-            res.send('Identity information retrieved:</BR>'+response.body);    
+            res.send(response.body);
         })
         .fail(function(response) {
             res.send('Failed with code = '+response.body+' ' +response.getCode());
