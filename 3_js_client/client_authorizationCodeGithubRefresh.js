@@ -14,14 +14,14 @@ const oauth2 = require('simple-oauth2').create({
         tokenHost: 'https://github.com',
         tokenPath: '/login/oauth/access_token',
         authorizePath: '/login/oauth/authorize',
-      revokePath: '/login/oauth/revoke',
-    },
+          revokePath: '/login/oauth/revoke',
+        },
   });
 
 // Authorization uri definition
 const authorizationUri = oauth2.authorizationCode.authorizeURL({
     redirect_uri: 'http://localhost:3000/callback',
-    scope: 'api1 offline_access',
+    scope: 'offline_access',
     state: 'abbc',
   });
    
