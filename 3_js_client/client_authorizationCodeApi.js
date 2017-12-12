@@ -7,32 +7,34 @@ var miaccessToken;
 
 const oauth2 = require('simple-oauth2').create({
     client: {
-      id: 'd473585efc3e69aadcf7',
-      secret: 'ddefc39a51989016093de346ba02253202feb568',      
+        id: 'codeClient',
+        secret: 'secret',      
     },
     auth: {    
-      tokenHost: 'https://github.com',
-      tokenPath: '/login/oauth/access_token',
-      authorizePath: '/login/oauth/authorize',
+        tokenHost: 'http://localhost:5000',
+        tokenPath: '/connect/token',
+        authorizeHost: 'http://localhost:5000',
+        authorizePath: '/connect/authorize',
+        revokePath: '/connect/revocation',
     },
   });
 
 // Authorization uri definition
 const authorizationUri = oauth2.authorizationCode.authorizeURL({
     redirect_uri: 'http://localhost:3000/callback',
-    scope: '',
+    scope: 'api1',
     state: 'abbc',
   });
    
 //Express routes
    
 app.get('/', (req, res) => {
-    res.send('Hello<br><a href="/auth">Log in with Github</a><br><a href="/repos">Get the repos</a>');
+    res.send('Hello<br><a href="/auth">Log in id server</a><br><a href="/data">Get the protected data</a>');
     });
 
-app.get('/repos', (req, res) => {
+app.get('/data', (req, res) => {
 
-    requestify.request('https://api.github.com/user/repos', {
+    requestify.request('http://localhost:5001/api/identity', {
         method: 'GET',
         headers: {                 
             'Authorization': 'Bearer ' + miaccessToken.token.access_token
@@ -62,7 +64,8 @@ app.get('/callback', (req, res) => {
     const code = req.query.code;
     console.log(code);
     var options = {
-      code,
+        code,
+        redirect_uri: 'http://localhost:3000/callback'
     }
 
     // Get the access token object for the client  
@@ -71,12 +74,11 @@ app.get('/callback', (req, res) => {
         .then((result) => {
             console.log('Done! We have a token ');
             miaccessToken = oauth2.accessToken.create(result);
+            return res.status(200).json(miaccessToken);
         })
         .catch((error) => {
         console.log('Access Token error', error.message);
         });
-
-        return res.status(200).json(miaccessToken);
     });
 
 
