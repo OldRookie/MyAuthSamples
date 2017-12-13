@@ -7,10 +7,17 @@ namespace _1_client_credentials.Configuration
     {
         public static IEnumerable<ApiResource> GetApiResources()
         {
-            return new List<ApiResource>
+            var ar = new ApiResource("api1", "My API")
             {
-                new ApiResource("api1", "My API")
-            };
+                Scopes = new List<Scope>()
+                {
+                    new Scope("api1"),
+                    new Scope("read"),
+                    new Scope("readEnhanced") 
+                }};
+
+            return new List<ApiResource>(){ar};
         }
     }
 }
+

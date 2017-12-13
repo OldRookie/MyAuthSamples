@@ -23,7 +23,7 @@ namespace _1_client_credentials.Configuration
                     },
 
                     // scopes that client has access to
-                    AllowedScopes = { "api1" }
+                    AllowedScopes = { "api1", "read","readEnhanced" }
                 },
                 new Client
                 {
