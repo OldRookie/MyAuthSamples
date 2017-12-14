@@ -49,7 +49,30 @@ namespace _5_UI_server.Configuration
                     AllowOfflineAccess = true,
                     RedirectUris = new List<string> { "http://localhost:3000/callback" },
                     PostLogoutRedirectUris = new List<string> {"http://localhost:3000/logout"}
+                },
+                new Client
+                {
+                    ClientId = "codeClientSPA",
+
+                    // no interactive user, use the clientid/secret for authentication
+                    AllowedGrantTypes = GrantTypes.Code,
+
+                    // secret for authentication
+                    ClientSecrets =
+                    {
+                        new Secret("secret".Sha256())
+                    },
+
+                    // scopes that client has access to
+                    AllowedScopes = { "api1" },
+                    RequireConsent = true,
+                    AllowRememberConsent = false,
+                    RequireClientSecret = false,
+                    RequirePkce = true,
+                    RedirectUris = new List<string> { "http://localhost:3000/callback" },
+                    PostLogoutRedirectUris = new List<string> {"http://localhost:3000/logout"},
                 }
+
             };
         }
     }
