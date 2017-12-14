@@ -1,13 +1,15 @@
 ## MyAuthSamples
 ### Resumen
 
-Este repositorio contiene ejemplos de autorización y autenticación usando Indentity Server 4, junto con las especificaciones OAuth2 y OPenIdConnect (en breve llegará)
+Este repositorio contiene ejemplos de autorización y autenticación usando Indentity Server 4, junto con las especificaciones OAuth2 y OpenIdConnect (en breve llegará)
 
-En la solución encontramos los siguientes proyectos:
+Se complementará con articulos en mi blog... que están en camino.
+
+### Proyectos en la solución
 
 **0_Overview**
 
-Se corresponde con el el siguiente tutorial, donde encontraremos los primeros pasos par atrabajar con Identity Server:
+Se corresponde con el el siguiente tutorial, donde encontraremos los primeros pasos para trabajar con Identity Server:
 http://docs.identityserver.io/en/release/quickstarts/0_overview.html
 
   Nos indica como preparar un proyecto visual studio core para "hostear" a identify server.  
@@ -24,7 +26,7 @@ http://docs.identityserver.io/en/release/quickstarts/0_overview.html
    Clientes: 
    
    <table>
-    <tr><td>Cliente</td><td>ClientId</td><td>Secret</td></tr>
+    <tr><td>Tipo de grant</td><td>ClientId</td><td>Secret</td></tr>
         <tr><td>Client credentials</td><td>client</td><td>secret</td></tr>
         <tr><td>Resource owner password</td><td>clientPwd</td><td>pwdsecret</td></tr>
     </table>
