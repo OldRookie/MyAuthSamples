@@ -99,3 +99,18 @@ Usuarios:
 
 **99_Api**
 
+Expone en http://localhost:5001 los siguientes recursos, todos para ser consumidos con GET:
+
+Recursos NO securizados:
+
+* /api/samurai  => Devuelve un listado de Samurais.
+
+Recursos securizados:
+
+Para acceder a ellos es necesario que el token disponga del scope api1
+
+* /api/identity => Devuelve un listado de claims del usuario. 
+
+* /api/identity/ReadData => Devuelve un string. Este recurso requiere que el token tenga un scope adicional: read
+
+* /api/identity/ReadDataEnhanced => Devuelve un string. Este recurso requiere que el token tenga un scope adicional:  readEnhanced
