@@ -7,9 +7,8 @@ En la solución encontramos los siguientes proyectos:
 
 **0_Overview**
 
-    Se corresponde con el el siguiente tutorial, donde encontraremos los primeros pasos par atrabajar con Identity Server:
-
-    http://docs.identityserver.io/en/release/quickstarts/0_overview.html
+Se corresponde con el el siguiente tutorial, donde encontraremos los primeros pasos par atrabajar con Identity Server:
+http://docs.identityserver.io/en/release/quickstarts/0_overview.html
 
   Nos indica como preparar un proyecto visual studio core para "hostear" a identify server.  
 
