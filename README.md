@@ -31,7 +31,7 @@ http://docs.identityserver.io/en/release/quickstarts/0_overview.html
         <tr><td>Resource owner password</td><td>clientPwd</td><td>pwdsecret</td></tr>
     </table>
 
-	Adicionalmente, se han configurado custom claims, tanto para uno de los clientes como para uno de los usuarios, de modo que podamos ver como el token puede llevar claims que no son las standard.
+Adicionalmente, se han configurado custom claims, tanto para uno de los clientes como para uno de los usuarios, de modo que podamos ver como el token puede llevar claims que no son las standard.
 
 Usuarios:
 
