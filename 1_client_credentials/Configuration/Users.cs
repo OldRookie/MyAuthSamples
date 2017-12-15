@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Security.Claims;
 using IdentityServer4.Test;
 
 namespace _1_client_credentials.Configuration
@@ -19,9 +20,14 @@ namespace _1_client_credentials.Configuration
                 {
                     SubjectId = "2",
                     Username = "tiberio",
-                    Password = "password"
+                    Password = "password",
+                    Claims = new List<Claim>()
+                    {
+                        new Claim("myCustomEmail","tiberio@hotmail@com"),
+                        new Claim("myCustomMobile","666998877"),
+                    }
                 }
             };
         }
-}
+    }
 }

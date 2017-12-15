@@ -9,6 +9,11 @@ namespace _1_client_credentials.Configuration
         {
             var ar = new ApiResource("api1", "My API")
             {
+                UserClaims = new List<string>()
+                {
+                    "myCustomEmail",
+                    "myCustomMobile"
+                },
                 Scopes = new List<Scope>()
                 {
                     new Scope("api1"),

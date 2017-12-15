@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Security.Claims;
 using IdentityServer4.Models;
 
 namespace _1_client_credentials.Configuration
@@ -23,7 +24,9 @@ namespace _1_client_credentials.Configuration
                     },
 
                     // scopes that client has access to
-                    AllowedScopes = { "api1", "read","readEnhanced" }
+                    AllowedScopes = { "api1", "read","readEnhanced" },
+                    
+                    Claims = new List<Claim>(){new Claim("customClientClaim","myvalue")}
                 },
                 new Client
                 {
@@ -39,7 +42,8 @@ namespace _1_client_credentials.Configuration
                     },
 
                     // scopes that client has access to
-                    AllowedScopes = { "api1" }
+                    AllowedScopes = { "api1" },
+                    AlwaysIncludeUserClaimsInIdToken = true
                 }
             };
         }
