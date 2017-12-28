@@ -77,10 +77,7 @@ Nota: el cliente y secreto de GitHub no es válido... ahorraos el tiempo y no in
 
 **5_UI_server**
 
-Authorization server que dispone de UI (con Identity Server 4) para habilitar el grant Authorization Code. Dispone de los siguientes clientes:
-   
-   * Client credentials
-   * Resource owner password
+Authorization server que dispone de UI (con Identity Server 4) para habilitar el grant Authorization Code. 
    
    Para ello dispone de dos clientes, con sus correspondientes pares clientId/secret, más un par de usuarios (necesarios para el grant     resource owner password)
    
@@ -100,6 +97,45 @@ Usuarios:
     <tr><td>efrain</td><td>password</td></tr>
         <tr><td>tiberio</td><td>password</td></tr>        
     </table>
+
+
+**6_UI_server_oidc**
+
+Authorization server que dispone de UI (con Identity Server 4) para habilitar el flow Implicit de OpenIdConnect. 
+   
+   Para ello dispone de un cliente que podemos ver a continuación:
+   
+
+   
+   <table>
+    <tr><td>Flow</td><td>ClientId</td><td>Secret</td></tr>
+        <tr><td>Implicit</td><td>iodcImplicitClient</td><td>no es necesario</td></tr>
+    </table>
+
+Es importante destacar que se ha habilitado un scope custom, que añade claims custom a las standard. El cliente anterior está configurado para soportar los siguientes scopes:
+
+* openid
+* profile
+* sergioScope, que añade soporte a las claims "sergioClaim1" y "sergioClaim2"
+
+Usuarios:
+
+   <table>
+    <tr><td>Usuario</td><td>Password</td><td>Custom claims</td></tr>
+    <tr><td>efrain</td><td>password</td><td>no tiene</td></tr>
+    <tr><td>tiberio</td><td>password</td><td>"sergioClaim1" =>"sergioClaim1 value"  y  "sergioClaim2" => "sergioClaim2 value"  </td></tr>        
+    </table>
+
+Esta aplicación se aloja en el puerto 5500
+
+**7_UI_core_client_oidc**
+
+Cliente .net core que dispone de UI (es MVC) y que dispone de una página segura (/home/about). 
+Esta configurado como cliente OpenIdConnect con el flujo implicit contra el Identity Server del puerto 5500 (apartado 6)
+
+También dispone de un endpoint /Home/Logout que dispara el proceso de logout contra el Identity Server
+
+Esta aplicación se aloja en el puerto 5501
 
 **99_Api**
 
