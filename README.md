@@ -144,6 +144,8 @@ Esta configurado como cliente OpenIdConnect con el flujo hybrid contra el Identi
 
 También dispone de una página (/home/api) que hace una llamada al API securizado (Api2, ver más abajo) usando el token que se obtubo del flujo Hybrid
 
+Finalmente dispone de otra página (/home/UserInfo) que devuelve el listado de claims de identidad del usuario, ya que por defecto en este flujo no vienen...
+
 Esta aplicación se aloja en el puerto 5503
 
 **99_Api**
