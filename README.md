@@ -148,6 +148,12 @@ Finalmente dispone de otra página (/home/UserInfo) que devuelve el listado de c
 
 Esta aplicación se aloja en el puerto 5503
 
+**9_js_client_implicit**
+
+Cliente ja que sigue el fujo implicit. Su index nos guia en el proceso, que permite jacer login y logout, además de llamar al API
+Esta aplicación se aloja en el puerto 5504
+
+
 **99_Api**
 
 Expone en http://localhost:5001 los siguientes recursos, todos para ser consumidos con GET:

@@ -46,6 +46,23 @@ namespace _6_UI_server_oidc.Configuration
                         "api2",
                     },
                     AllowOfflineAccess = true
+                },
+                new Client
+                {
+                    ClientId = "jsImplicitClient",
+                    ClientName = "iodc Implicit Client",
+                    AllowedGrantTypes = GrantTypes.Implicit,
+                    RedirectUris = { "http://localhost:5504/callback.html" },
+                    PostLogoutRedirectUris = { "http://localhost:5504/index.html" },
+
+                    AllowedScopes =
+                    {
+                        IdentityServerConstants.StandardScopes.OpenId,
+                        IdentityServerConstants.StandardScopes.Profile,
+                        "sergioScope",
+                        "api2",
+                    },
+                    AllowAccessTokensViaBrowser = true
                 }
             };
         }

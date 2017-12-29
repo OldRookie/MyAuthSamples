@@ -28,6 +28,17 @@ namespace _99_Api2
                     options.RequireHttpsMetadata = false;
                     options.ApiName = "api2";
                 });
+
+            services.AddCors(options =>
+            {
+                // this defines a CORS policy called "default"
+                options.AddPolicy("default", policy =>
+                {
+                    policy.WithOrigins("http://localhost:5504")
+                        .AllowAnyHeader()
+                        .AllowAnyMethod();
+                });
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -37,6 +48,7 @@ namespace _99_Api2
             {
                 app.UseDeveloperExceptionPage();
             }
+            app.UseCors("default");
             app.UseAuthentication();
             app.UseMvc();
         }
