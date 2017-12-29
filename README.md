@@ -135,7 +135,16 @@ Esta configurado como cliente OpenIdConnect con el flujo implicit contra el Iden
 
 También dispone de un endpoint /Home/Logout que dispara el proceso de logout contra el Identity Server
 
-Esta aplicación se aloja en el puerto 5501
+Esta aplicación se aloja en el puerto 5502
+
+**8_UI_core_client_oidc_hybrid**
+
+Cliente .net core que dispone de UI (es MVC) y que dispone de una página segura (/home/about). 
+Esta configurado como cliente OpenIdConnect con el flujo hybrid contra el Identity Server del puerto 5500 (apartado 6)
+
+También dispone de una página (/home/api) que hace una llamada al API securizado (Api2, ver más abajo) usando el token que se obtubo del flujo Hybrid
+
+Esta aplicación se aloja en el puerto 5503
 
 **99_Api**
 
@@ -154,3 +163,12 @@ Para acceder a ellos es necesario que el token disponga del scope api1
 * /api/identity/ReadData => Devuelve un string. Este recurso requiere que el token tenga un scope adicional: read
 
 * /api/identity/ReadDataEnhanced => Devuelve un string. Este recurso requiere que el token tenga un scope adicional:  readEnhanced
+
+**99_Api2**
+
+Expone en http://localhost:5501 los siguientes recursos securizados, todos para ser consumidos con GET:
+
+
+* /api/values  => Devuelve un listado de valores, que son strings
+
+Para acceder a ellos es necesario que el token disponga del scope api2

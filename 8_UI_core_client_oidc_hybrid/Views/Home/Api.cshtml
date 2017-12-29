@@ -1,0 +1,14 @@
+﻿@using Microsoft.AspNetCore.Authentication
+@model List<string>
+@{
+    ViewData["Title"] = "Api";
+}
+<h2>@ViewData["Title"]</h2>
+
+<p>VALUES:</p>
+<dl>
+    @foreach (var value in @Model)
+    {
+        <dt>@value</dt>
+    }
+</dl>

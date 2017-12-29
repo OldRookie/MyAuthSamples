@@ -3,7 +3,7 @@
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
     "iisExpress": {
-      "applicationUrl": "http://localhost:63042/",
+      "applicationUrl": "http://localhost:5503",
       "sslPort": 0
     }
   },
@@ -15,14 +15,14 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "_7_UI_core_client_oidc": {
+    "_8_UI_core_client_oidc_hybrid": {
       "commandName": "Project",
       "launchBrowser": true,
-      "launchUrl": "http://localhost:5502/",
+      "launchUrl": "http://localhost:5503",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },
-      "applicationUrl": "http://localhost:5502/"
+      "applicationUrl": "http://localhost:5503"
     }
   }
 }

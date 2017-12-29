@@ -9,7 +9,7 @@ namespace _6_UI_server_oidc.Configuration
         {
             return new List<ApiResource>
             {
-                new ApiResource("api1", "My API")
+                new ApiResource("api2", "My API")
             };
         }
     }
