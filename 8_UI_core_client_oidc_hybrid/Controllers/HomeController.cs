@@ -3,6 +3,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
+using IdentityModel.Client;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -46,9 +47,19 @@ namespace _8_UI_core_client_oidc_hybrid.Controllers
             var client = new HttpClient();
             client.SetBearerToken(accessToken);
             var content = await client.GetStringAsync("http://localhost:5501/api/values");
-
             var values = JsonConvert.DeserializeObject<List<string>>(content);
             return View(values);
         }
+
+        public async Task<IActionResult> UserInfo()
+        {
+            var accessToken = await HttpContext.GetTokenAsync("access_token");
+            var userInfoClient = new UserInfoClient("http://localhost:5500/connect/userinfo");
+
+            var response = await userInfoClient.GetAsync(accessToken);
+            var claims = response.Claims;
+            return View(claims.ToList());
+        }
     }
 }
+

@@ -1,0 +1,15 @@
+﻿@using System.Security.Claims
+@model List<Claim>
+@{
+    ViewData["Title"] = "User info";
+}
+<h2>@ViewData["Title"]</h2>
+
+<p>VALUES:</p>
+<dl>
+    @foreach (var claim in @Model)
+    {
+        <dt > @claim.Type</dt>
+    <dd>@claim.Value</dd>
+}
+</dl>
