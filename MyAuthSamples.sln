@@ -30,6 +30,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "8_UI_core_client_oidc_hybri
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "9_js_client_implicit", "9_js_client_implicit\9_js_client_implicit.csproj", "{EF1E7D6A-7198-49FB-A904-A570DC19409C}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "9_js_client_hybrid", "9_js_client_hybrid\9_js_client_hybrid.csproj", "{20E93B82-D9B8-46B8-AA67-8C4E8278B6FD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -80,6 +82,10 @@ Global
 		{EF1E7D6A-7198-49FB-A904-A570DC19409C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EF1E7D6A-7198-49FB-A904-A570DC19409C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EF1E7D6A-7198-49FB-A904-A570DC19409C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{20E93B82-D9B8-46B8-AA67-8C4E8278B6FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20E93B82-D9B8-46B8-AA67-8C4E8278B6FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20E93B82-D9B8-46B8-AA67-8C4E8278B6FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20E93B82-D9B8-46B8-AA67-8C4E8278B6FD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -63,6 +63,27 @@ namespace _6_UI_server_oidc.Configuration
                         "api2",
                     },
                     AllowAccessTokensViaBrowser = true
+                },
+                new Client
+                {
+                    ClientId = "jsHybridClient",
+                    ClientName = "iodc Hybrid Client",
+                    AllowedGrantTypes = GrantTypes.HybridAndClientCredentials,
+                    RedirectUris = { "http://localhost:5504/callback.html" },
+                    PostLogoutRedirectUris = { "http://localhost:5504/index.html" },
+                    ClientSecrets =
+                    {
+                        new Secret("secret".Sha256())
+                    },
+                    AllowedScopes =
+                    {
+                        IdentityServerConstants.StandardScopes.OpenId,
+                        IdentityServerConstants.StandardScopes.Profile,
+                        "sergioScope",
+                        "api2",
+                    },
+                    AllowOfflineAccess = true,
+                    AllowAccessTokensViaBrowser = true
                 }
             };
         }

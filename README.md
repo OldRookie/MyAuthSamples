@@ -150,9 +150,15 @@ Esta aplicación se aloja en el puerto 5503
 
 **9_js_client_implicit**
 
-Cliente ja que sigue el fujo implicit. Su index nos guia en el proceso, que permite jacer login y logout, además de llamar al API
+Cliente js que sigue el fujo implicit. Su index nos guia en el proceso, que permite hacer login y logout, además de llamar al API
 Esta aplicación se aloja en el puerto 5504
 
+**9_js_client_implicit**
+
+Cliente js que sigue el fujo hybrid. Su index nos guia en el proceso, que permite hacer login y logout, además de llamar al API
+Esta aplicación se aloja en el puerto 5504
+
+Se ha intentado implementar sin exito funcionalidad para revocar el access_token. Desafortunadamente la libreria oidc-client-js que usamos en el lado JS no esta funcionando en este caso de uso ... :-(
 
 **99_Api**
 
@@ -172,11 +178,14 @@ Para acceder a ellos es necesario que el token disponga del scope api1
 
 * /api/identity/ReadDataEnhanced => Devuelve un string. Este recurso requiere que el token tenga un scope adicional:  readEnhanced
 
+Su "autoridad" es el identity server que da soporte a OAuth2 (puerto 5000)
+
 **99_Api2**
 
 Expone en http://localhost:5501 los siguientes recursos securizados, todos para ser consumidos con GET:
 
-
 * /api/values  => Devuelve un listado de valores, que son strings
 
 Para acceder a ellos es necesario que el token disponga del scope api2
+
+Su "autoridad" es el identity server que da soporte a OpenIdConnect (puerto 5500)
