@@ -15,8 +15,11 @@ namespace _7_UI_core_client_oidc.Controllers
         }
 
         [Authorize]
-        public IActionResult About()
+        public async Task<IActionResult> About()
         {
+            var id_token = await HttpContext.GetTokenAsync("id_token");
+            var access_token = await  HttpContext.GetTokenAsync("access_token"); //It will be always null
+
             ViewData["Message"] = "Your application description page.";
 
             return View();
