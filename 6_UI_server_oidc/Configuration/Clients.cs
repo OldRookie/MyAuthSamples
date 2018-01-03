@@ -16,8 +16,8 @@ namespace _6_UI_server_oidc.Configuration
                     ClientName = "iodc Implicit Client",
                     AllowedGrantTypes = GrantTypes.Implicit,
 
-                    RedirectUris = { "http://localhost:5501/signin-oidc" },
-                    PostLogoutRedirectUris = { "http://localhost:5501/signout-callback-oidc" },
+                    RedirectUris = { "http://localhost:5502/signin-oidc" },
+                    PostLogoutRedirectUris = { "http://localhost:5502/signout-callback-oidc" },
 
                     AllowedScopes =
                     {
