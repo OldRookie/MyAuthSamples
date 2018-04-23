@@ -48,7 +48,9 @@ namespace _5_UI_server.Configuration
                     AllowRememberConsent = false,
                     AllowOfflineAccess = true,
                     RedirectUris = new List<string> { "http://localhost:3000/callback" },
-                    PostLogoutRedirectUris = new List<string> {"http://localhost:3000/logout"}
+                    PostLogoutRedirectUris = new List<string> {"http://localhost:3000/logout"},
+                    RefreshTokenExpiration = TokenExpiration.Absolute,
+                    AccessTokenLifetime = 15
                 },
                 new Client
                 {

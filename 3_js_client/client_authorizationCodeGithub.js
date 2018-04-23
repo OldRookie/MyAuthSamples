@@ -7,21 +7,21 @@ var miaccessToken;
 
 const oauth2 = require('simple-oauth2').create({
     client: {
-      id: 'd473585efc3e69aadcf7',
-      secret: 'ddefc39a51989016093de346ba02253202feb568',      
+        id: 'fdfc2be6b8b40646ea03',
+        secret: '72f5ace862c834bdeffa896122cd3986e8359da0'
     },
     auth: {    
       tokenHost: 'https://github.com',
       tokenPath: '/login/oauth/access_token',
-      authorizePath: '/login/oauth/authorize',
-    },
+      authorizePath: '/login/oauth/authorize'
+    }
   });
 
 // Authorization uri definition
 const authorizationUri = oauth2.authorizationCode.authorizeURL({
     redirect_uri: 'http://localhost:3000/callback',
     scope: '',
-    state: 'abbc',
+    state: 'abbc'
   });
    
 //Express routes

@@ -86,7 +86,7 @@ Authorization server que dispone de UI (con Identity Server 4) para habilitar el
    <table>
     <tr><td>Grant</td><td>ClientId</td><td>Secret</td></tr>
         <tr><td>Authorization code</td><td>codeClient</td><td>secret</td></tr>
-        <tr><td>Authorization code con soporte a refresh tokens</td><td>codeClientRefresh</td><td>secret</td></tr>
+        <tr><td>Authorization code con soporte a refresh tokens (caducidad al los 15 segundos)</td><td>codeClientRefresh</td><td>secret</td></tr>
     <tr><td>Authorization code sin client secret y con extension PKCE</td><td>codeClientSPA</td><td>secret</td></tr>
     </table>
 

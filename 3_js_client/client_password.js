@@ -7,11 +7,11 @@ const app = express();
 const oauth2 = require('simple-oauth2').create({
     client: {
       id: 'clientPwd',
-      secret: 'pwdsecret',      
+      secret: 'pwdsecret'      
     },
     auth: {    
       tokenHost: 'http://localhost:5000',
-      tokenPath: '/connect/token',
+      tokenPath: '/connect/token'
     },
   });
 

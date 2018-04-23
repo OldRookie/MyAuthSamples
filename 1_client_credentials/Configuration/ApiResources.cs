@@ -19,7 +19,8 @@ namespace _1_client_credentials.Configuration
                     new Scope("api1"),
                     new Scope("read"),
                     new Scope("readEnhanced") 
-                }};
+                }
+            };
 
             return new List<ApiResource>(){ar};
         }

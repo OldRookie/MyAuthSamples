@@ -29,10 +29,16 @@ const authorizationUri = oauth2.authorizationCode.authorizeURL({
 //Express routes
    
 app.get('/', (req, res) => {
-    res.send('Hello<br><a href="/auth">Log in id server</a><br><a href="/data">Get the protected data</a>');
+    res.send('Hello<br><a href="/auth">Log in id server</a><br><a href="/data">Get the protected data</a>  <br><a href="/refresh">Refresh token</a>');
 });
 
-app.get('/data', (req, res) => {
+app.get('/data',(req, res, next) => {
+        //Avoid browser caching
+        res.header('Cache-Control', 'private, no-cache, no-store, must-revalidate');
+        res.header('Expires', '-1');
+        res.header('Pragma', 'no-cache');
+        next();
+    },(req, res) => {
 
     requestify.request('http://localhost:5001/api/identity', {
         method: 'GET',

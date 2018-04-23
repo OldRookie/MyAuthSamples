@@ -22,9 +22,9 @@ const oauth2 = require('simple-oauth2').create({
 const authorizationUri = oauth2.authorizationCode.authorizeURL({
     redirect_uri: 'http://localhost:3000/callback',
     scope: 'offline_access',
-    state: 'abbc',
+    state: 'abbc'
   });
-   
+
 //Express routes
    
 app.get('/', (req, res) => {

@@ -13,8 +13,8 @@ namespace _1_client_credentials
         {
             services.AddIdentityServer()
                 .AddDeveloperSigningCredential()
-                .AddInMemoryApiResources(Configuration.ApiResources.GetApiResources())
-                .AddInMemoryClients(Configuration.Clients.GetClients())
+                .AddInMemoryApiResources(ApiResources.GetApiResources())
+                .AddInMemoryClients(Clients.GetClients())
                 .AddTestUsers(Users.GetUsers());
         }
 
